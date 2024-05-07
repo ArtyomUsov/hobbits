@@ -1,0 +1,58 @@
+[
+  {
+    "id": 0,
+    "name": "Thorin",
+    "yearOfBirth": 2746
+  },{
+    "id": 1,
+    "name": "Fili",
+    "yearOfBirth": 2859
+},{
+    "id": 2,
+    "name": "Kili",
+    "yearOfBirth": 2864
+},{
+    "id": 3,
+    "name": "Oin",
+    "yearOfBirth": 2774
+  },{
+    "id": 4,
+    "name": "Gloin",
+    "yearOfBirth": 2783
+  },{
+    "id": 5,
+    "name": "Balin",
+    "yearOfBirth": 2763
+  },{
+    "id": 6,
+    "name": "Dwalin",
+    "yearOfBirth": 2772
+  },{
+    "id": 7,
+    "name": "Ori",
+    "yearOfBirth": null
+  },{
+    "id": 8,
+    "name": "Nori",
+    "yearOfBirth": null
+  },{
+    "id": 9,
+    "name": "Dori",
+    "yearOfBirth": null
+  },{
+    "id": 10,
+    "name": "Bifur",
+    "yearOfBirth": null
+  },{
+    "id": 11,
+    "name": "Bofur",
+    "yearOfBirth": null
+  },{
+    "id": 12,
+    "name": "Bombur",
+    "yearOfBirth": null
+  }
+]
+
+
+
