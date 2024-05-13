@@ -1,0 +1,39 @@
+version: "3.5"
+
+services:
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: ./Dockerfile
+    expose:
+      - 80
+    environment:
+      - NODE_ENV=production
+    networks:
+      - hobbit_network
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: ./Dockerfile
+    expose:
+      - 8000
+    volumes:
+      - .:/app
+    networks:
+      - hobbit_network
+
+  nginx:
+    image: nginx:1.25.5
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+    ports:
+      - "8888:80"
+    depends_on:
+      - backend
+      - frontend
+    networks:
+      - hobbit_network
+
+networks:
+  hobbit_network:

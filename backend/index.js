@@ -1,8 +1,9 @@
 const express = require('express');
+const path = require('path');
 const app = express();
 
-app.use(express.static('public'));
-app.use(express.urlencoded());
+app.use('/public', express.static(path.join(__dirname, 'public')));
+app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 const YEAR_OF_ADVENTURE = 2941;
@@ -12,11 +13,11 @@ const dwarfsHashmap = dwarfs.reduce((result, el) => {
   return result;
 }, {});
 
-app.get('/quiz', (req, res) => {
+app.get('/api/quiz', (req, res) => {
   res.json({"id": randomIntFromInterval(0, dwarfs.length-1)});
 });
 
-app.post('/check_answer', (req, res) => {
+app.post('/api/check_answer', (req, res) => {
   calculateSuccess(req, res);
 });
 
@@ -44,4 +45,6 @@ function calculateSuccess(req, res) {
   }
 }
 
-app.listen(8000);
+app.listen(8000, () => {
+  console.log(`Сервер запущен на 8000 порту`);
+});
